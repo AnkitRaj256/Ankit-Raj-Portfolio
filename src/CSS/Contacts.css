@@ -1,0 +1,115 @@
+/* Contact.css */
+.contact {
+  padding: 60px 20px;
+  background: #000000;
+  color: #ffffff;
+  text-align: center;
+  max-width: auto;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.contact .subheading {
+  font-size: 1.1rem;
+  color: #c1c1c1;
+  margin-bottom: 30px;
+}
+
+.contact-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-left: 12%;
+  margin-right: 12%;
+}
+
+.contact-item {
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  max-width: 320px;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  margin-left: 5px;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #f96d00; /* Elegant purple tone for hover effect */
+}
+
+.contact-icon {
+  width: 25px; /* Adjust the size of the icon */
+  height: 25px; /* Ensure the aspect ratio is maintained */
+  margin-right: 10px; /* Space between the icon and text */
+  vertical-align: middle; /* Aligns the icon with the text */
+}
+
+.contact a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+.contact-icon, .platform-logo {
+  color: #f96d00;
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover .contact-icon, .contact-item:hover .platform-logo {
+  transform: scale(1.1); /* Slight zoom on icon/logo hover */
+}
+
+.platform-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+/* Optional: Add media query for responsiveness */
+@media (max-width: 768px) {
+  .contact {
+    padding: 40px 10px;
+  }
+
+  .contact-item {
+    padding: 12px 20px;
+  }
+
+  .contact-item a {
+    font-size: 1rem;
+  }
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 50px;
+  margin-bottom: -30px;
+  color: #666;
+}

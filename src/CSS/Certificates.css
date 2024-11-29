@@ -1,0 +1,59 @@
+/* Container for the slider */
+.certificates-container {
+    width: 100%;
+    overflow: hidden; /* Hide overflow to show only visible certificates */
+    position: relative;
+    background-color: #f4f4f4;
+  }
+  
+  .certificates-container h2 {
+    margin-top: 100px;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    animation: slideDown 2s ease-in-out;
+    text-align: center;
+  }
+
+  /* Slider wrapper with animation */
+  .certificates-slider {
+    display: flex;
+    animation: scroll-right-to-left 60s linear infinite; /* Adjusted duration for smooth scrolling */
+    width: max-content; /* Ensures all items fit within the container */
+  }
+  
+  .certificates-slider:hover {
+    animation-play-state: paused; /* Pause the scroll on hover */
+  }
+  
+  /* Individual certificate card */
+  .certificate-card {
+    flex-shrink: 0;
+    height: 500px;
+    width: 600px; /* Fixed width for certificates */
+    margin-right: 20px; /* Space between certificates */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .certificate-card:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+  }
+  
+  .certificate-image {
+    width: 100%;
+    height: 450px; /* Preserve image size */
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Keyframes for continuous scrolling right-to-left */
+  @keyframes scroll-right-to-left {
+    0% {
+      transform: translateX(0); /* Start at the beginning */
+    }
+    100% {
+      transform: translateX(-50%); /* Slide by half the width of the content */
+    }
+  }
+  

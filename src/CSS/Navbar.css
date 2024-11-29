@@ -1,0 +1,47 @@
+/* Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #0c0e10;
+    color: white;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-right: 20px;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.nav-links li a:hover {
+    color: #d5772f; /* Change text color on hover */
+    transform: scale(1.1); /* Slightly enlarge the element for pop-up effect */
+    text-shadow: 0 0 10px #d5772f, 0 0 20px #d5772f, 0 0 30px #d5772f;
+}
+.logo {
+  font-size: 2rem;
+  font-family: 'Arial Black', sans-serif;
+  margin-left: 40px;
+  position: relative; /* Ensure it can be positioned during animation */
+  animation: slide-in 1.5s ease-out forwards; /* Apply the animation */
+}
+
+/* Keyframes for the slide-in effect */
+@keyframes slide-in {
+  from {
+      transform: translateX(100%); /* Start off-screen to the right */
+      opacity: 0; /* Make it invisible initially */
+  }
+  to {
+      transform: translateX(0); /* End at its original position */
+      opacity: 1; /* Fade in as it slides */
+  }
+}
+  
