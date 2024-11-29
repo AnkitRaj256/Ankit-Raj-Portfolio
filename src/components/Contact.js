@@ -16,7 +16,7 @@ const Contact = () => {
         {/* Contact Number Link */}
         <div className="contact-item">
           <FaPhoneAlt className="contact-icon" size={30} />
-          <a href="tel:+1234567890">(+91) 9508827521</a>
+          <a href="tel:+1234567890">(+91) 95*******1</a>
         </div>
 
         {/* Email Link */}
