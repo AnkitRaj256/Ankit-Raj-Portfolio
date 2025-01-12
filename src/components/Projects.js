@@ -4,6 +4,7 @@ import "../CSS/Projects.css";
 import cart from "../Images/cart.png";
 import cw from "../Images/cw.png";
 import ih from "../Images/ih.png";
+import cg from "../Images/cg.jpg";
 
 const projects = [
   {
@@ -26,6 +27,13 @@ const projects = [
     description: "A creative project that keeps your inner musician happy.",
     bgImage: ih,
     repo: "https://github.com/AnkitRaj256/Instrumental_Hub",
+  },
+  {
+    id: 4,
+    name: "Code Galaxy",
+    description: "A platform to ask, share, and solve all your coding doubts.",
+    bgImage: cg,
+    repo: "https://github.com/AnkitRaj256/Code-Galaxy",
   },
 ];
 
