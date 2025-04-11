@@ -10,6 +10,7 @@ import C7 from "../Images/C7.png";
 import C8 from "../Images/C8.png";
 import C9 from "../Images/C9.png";
 import C10 from "../Images/C10.png";
+import C11 from "../Images/C11.png";
 
 const certificates = [
   {
@@ -38,36 +39,42 @@ const certificates = [
   },
   {
     id: 5,
+    title: "Cyber Security Analyst",
+    image: C11,
+    url: "https://courses.ibmcep.cognitiveclass.ai/certificates/045285fabb0241849f04786374dbc002",
+  },
+  {
+    id: 6,
     title: "Build a Full Website using Wordpress",
     image: C5,
     url: "https://coursera.org/verify/PUDRV4HY4M66",
   },
   {
-    id: 6,
+    id: 7,
     title: "Elements of AI",
     image: C6,
     url: "https://certificates.mooc.fi/validate/eswnhux6yvk",
   },
   {
-    id: 7,
+    id: 8,
     title: "Learning C",
     image: C7,
     url: "https://example.com/certificate3",
   },
   {
-    id: 8,
+    id: 9,
     title: "Critical Thinking and Problem Solving",
     image: C8,
     url: "https://example.com/certificate3",
   },
   {
-    id: 9,
+    id: 10,
     title: "Learning MATLAB",
     image: C9,
     url: "https://example.com/certificate3",
   },
   {
-    id: 10,
+    id: 11,
     title: "MATLAB Onramp",
     image: C10,
     url: "https://example.com/certificate3",

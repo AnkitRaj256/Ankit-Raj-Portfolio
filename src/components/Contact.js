@@ -58,13 +58,13 @@ const Contact = () => {
         {/* Resume Link */}
         <div className="contact-item">
           <img src= {Resumelogo} alt="Resume Icon" className="contact-icon" />
-          <a href="https://drive.google.com/file/d/1wQHHfoXGytkjXwCJV9DV2C8fzusLcmh1/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a href="https://drive.google.com/file/d/1tXwWgoXSm5aeljw946ja1QWpy79NGegA/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
         </div>
 
       </div>
       {/* Copyright Info */}
       <div className="footer">
-          <p>&copy; 2024 Ankit Raj. All Rights Reserved.</p>
+          <p>&copy; 2025 Ankit Raj. All Rights Reserved.</p>
         </div>
     </section>
   );
