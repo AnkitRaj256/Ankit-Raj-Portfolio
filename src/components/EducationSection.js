@@ -3,9 +3,8 @@ import "../CSS/EducationSection.css";
 import TenthMarksheet from "../Images/10thMarksheet.jpg";
 import TweMarksheet from "../Images/12thMarksheet.jpg";
 
-// PDF link from Google Drive (make sure it's publicly shareable)
 const UndergraduatePDF =
-  "https://drive.google.com/file/d/1-rQ60ISV5DGQGhD-Fmsa7ibzGjNxbKRc/view?usp=sharing";
+  "https://drive.google.com/file/d/1LKfJeaG6JB14RIDKPVI8D-qGjjadJZ8H/view?usp=sharing";
 
 const educationDetails = [
   {
@@ -44,7 +43,7 @@ const EducationSection = () => {
 
   return (
     <div className="education-section">
-      <h1 className="section-title">Education</h1>
+      <h1 className="section-title" >Education</h1>
       <div className="education-cards">
         {educationDetails.map((edu, index) => (
           <div key={index} className="card">

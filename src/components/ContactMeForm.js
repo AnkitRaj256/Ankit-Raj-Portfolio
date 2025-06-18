@@ -17,22 +17,29 @@ export default function ContactForm() {
   const onSubmit = async (event) => {
     event.preventDefault();
     setResult("Sending...");
-    const formDataObj = new FormData(event.target);
 
-    formDataObj.append("access_key", "f05b9f22-e68c-428f-a069-c3ba45583a81"); // Replace with your Web3Forms Access Key
+    const payload = {
+      access_key: "f05b9f22-e68c-428f-a069-c3ba45583a81",
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    };
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formDataObj,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();
 
       if (data.success) {
         setResult("Form Submitted Successfully");
-        setIsPopupVisible(true); // Show the popup
-        setFormData({ name: "", email: "", message: "" }); // Reset the formData state
+        setIsPopupVisible(true);
+        setFormData({ name: "", email: "", message: "" });
       } else {
         console.error("Submission error:", data);
         setResult(data.message || "Error submitting the form.");
@@ -42,6 +49,7 @@ export default function ContactForm() {
       setResult("Something went wrong. Please try again later.");
     }
   };
+
 
   const closePopup = () => {
     setIsPopupVisible(false); // Close the popup

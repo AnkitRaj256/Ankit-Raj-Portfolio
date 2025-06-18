@@ -1,6 +1,7 @@
 // components/Hero.js
 import React from 'react';
 import { motion } from 'framer-motion';
+import { TypeAnimation } from 'react-type-animation';
 import '../CSS/Hero.css';
 import me from "../Images/me.jpg";
 
@@ -13,8 +14,28 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5 }}
       >
-        <h1>Welcome to My Portfolio</h1>
-        <p>I'm a passionate Developer & Designer</p>
+        <h1>Hi, I'm Ankit Raj</h1>
+
+        <TypeAnimation
+          sequence={[
+            'Crafting beautiful web experiences...',
+            2000,
+            '',
+            1000,
+            'Designing interfaces with passion...',
+            2000,
+            '',
+            1000,
+            'Turning ideas into code...',
+            2000,
+            '',
+            1000,
+          ]}
+          speed={50}
+          repeat={Infinity}
+          wrapper="p"
+          className="typing-loop"
+        />
       </motion.div>
 
       <motion.div
@@ -28,6 +49,5 @@ const Hero = () => {
     </section>
   );
 };
-
 
 export default Hero;

@@ -1,62 +1,77 @@
 import React from "react";
 import "../CSS/SkillsSection.css";
+import {
+  FaPython, FaJava, FaHtml5, FaCss3Alt, FaJs,
+  FaGitAlt, FaWordpress, FaBootstrap, FaTools,
+} from "react-icons/fa";
+import {
+  SiTailwindcss, SiVercel, SiMysql, SiMongodb,
+  SiReact, SiJquery, SiExpress, SiCplusplus, SiC,
+  SiVisualstudiocode, SiGithubpages, SiPandas, SiNumpy,
+} from "react-icons/si";
 
-const skills = [
-  // Frontend Skills
-  { name: "HTML", level: "90%" },
-  { name: "CSS", level: "85%" },
-  { name: "JavaScript", level: "85%" },
-  { name: "React.js", level: "80%" },
-  { name: "Bootstrap", level: "80%" },
-  { name: "jQuery", level: "70%" },
-
-  // Backend Skills
-  { name: "Node.js", level: "75%" },
-  { name: "Express.js", level: "70%" },
-
-  // Database Skills
-  { name: "MySQL", level: "85%" },
-  { name: "MongoDB", level: "80%" },
-
-  // Programming Languages
-  { name: "Python", level: "90%" },
-  { name: "C", level: "85%" },
-  { name: "C++", level: "80%" },
-  { name: "Java", level: "75%" },
-
-  // Tools and Platforms
-  { name: "Git", level: "80%" },
-  { name: "WordPress", level: "85%" },
-  { name: "MATLAB", level: "70%" },
-
-  // Soft Skills
-  { name: "Critical Thinking", level: "90%" },
-  { name: "Problem Solving", level: "85%" },
-  { name: "Team Leadership", level: "80%" },
+const skillGroups = [
+  {
+    title: "Programming and Markup Languages",
+    skills: [
+      { name: "C++", icon: <SiCplusplus /> },
+      { name: "C", icon: <SiC /> },
+      { name: "Java", icon: <FaJava /> },
+      { name: "HTML", icon: <FaHtml5 /> },
+      { name: "CSS", icon: <FaCss3Alt /> },
+      { name: "JavaScript", icon: <FaJs /> },
+      { name: "Python", icon: <FaPython /> },
+    ],
+  },
+  {
+    title: "Frameworks and Libraries",
+    skills: [
+      { name: "React.js", icon: <SiReact /> },
+      { name: "Bootstrap", icon: <FaBootstrap /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+      { name: "jQuery", icon: <SiJquery /> },
+      { name: "Express.js", icon: <SiExpress /> },
+      { name: "NumPy", icon: <SiNumpy /> },
+      { name: "Pandas", icon: <SiPandas /> },
+    ],
+  },
+  {
+    title: "Databases and Cloud Hosting",
+    skills: [
+      { name: "MySQL", icon: <SiMysql /> },
+      { name: "MongoDB", icon: <SiMongodb /> },
+      { name: "GitHub Pages", icon: <SiGithubpages /> },
+      { name: "Vercel", icon: <SiVercel /> },
+    ],
+  },
+  {
+    title: "Software and Tools",
+    skills: [
+      { name: "Git", icon: <FaGitAlt /> },
+      { name: "WordPress", icon: <FaWordpress /> },
+      { name: "MATLAB", icon: <FaTools /> },
+      { name: "VS Code", icon: <SiVisualstudiocode /> },
+    ],
+  },
 ];
-
 
 const SkillsSection = () => {
   return (
     <div className="skills-section">
       <h1 className="section-title">My Skills</h1>
-
-      {/* Skills Cards */}
-      <div className="skills-grid">
-        {skills.map((skill, index) => (
-          <div className="skill-card" key={index}>
-            <h2>{skill.name}</h2>
-            <div className="progress-bar">
-              <div
-                className="progress"
-                style={{ width: skill.level }}
-                title={skill.level}
-              ></div>
-            </div>
+      {skillGroups.map((group, index) => (
+        <div key={index}>
+          <h2 className="group-title">{group.title}</h2>
+          <div className="skills-container">
+            {group.skills.map((skill, idx) => (
+              <div className="skill-badge" key={idx}>
+                <span className="icon">{skill.icon}</span>
+                <span className="label">{skill.name}</span>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-
+        </div>
+      ))}
     </div>
   );
 };

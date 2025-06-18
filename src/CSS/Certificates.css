@@ -1,59 +1,177 @@
-/* Container for the slider */
+:root {
+  --card-hover: #222222;
+  --shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Main container */
 .certificates-container {
-    width: 100%;
-    overflow: hidden; /* Hide overflow to show only visible certificates */
-    position: relative;
-    background-color: #f4f4f4;
+  width: 97%;
+  padding: 40px 20px;
+  color: var(--text-color);
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Heading */
+.certificates-container h2 {
+  font-size: 2.5rem;
+  margin: 100px 0 20px;
+  text-align: center;
+  animation: slideDown 1.5s ease;
+}
+
+.certificates-instruction {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-color);
+  opacity: 0.8;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+/* Slider wrapper to hide overflow */
+.certificates-slider-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Actual sliding container */
+.certificates-slider {
+  display: flex;
+  width: fit-content;
+  animation: scroll-right-to-left 60s linear infinite;
+}
+
+.certificates-slider:hover {
+  animation-play-state: paused;
+}
+
+/* Individual certificate card */
+.certificate-card {
+  flex-shrink: 0;
+  height: 400px;
+  width: 600px;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: scale(1.05);
+}
+
+.certificate-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+/* Show All button */
+.show-all-btn {
+  margin: 30px auto;
+  padding: 12px 24px;
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: block;
+}
+
+.show-all-btn:hover {
+  background-color: var(--card-hover);
+}
+
+/* Grid view for "Show All" section */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+  padding: 0 10px;
+}
+
+.grid-card {
+  position: relative;
+  background: var(--card-back);
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.grid-card:hover {
+  transform: scale(1.03);
+  background-color: var(--modal-bg);
+}
+
+.grid-card img {
+  width: 100%;
+  border-radius: 8px;
+  height: auto;
+  object-fit: contain;
+}
+
+.grid-card p {
+  margin-top: 10px;
+  color: var(--text-color);
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes scroll-right-to-left {
+  0% {
+    transform: translateX(0);
   }
-  
-  .certificates-container h2 {
-    margin-top: 100px;
-    font-size: 2rem;
-    margin-bottom: 40px;
-    animation: slideDown 2s ease-in-out;
-    text-align: center;
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .certificate-card {
+    width: 85vw;
+    height: 300px;
   }
 
-  /* Slider wrapper with animation */
-  .certificates-slider {
-    display: flex;
-    animation: scroll-right-to-left 60s linear infinite; /* Adjusted duration for smooth scrolling */
-    width: max-content; /* Ensures all items fit within the container */
+  .certificates-container h2 {
+    font-size: 2rem;
   }
-  
-  .certificates-slider:hover {
-    animation-play-state: paused; /* Pause the scroll on hover */
+
+  .certificates-instruction {
+    font-size: 0.9rem;
   }
-  
-  /* Individual certificate card */
+}
+
+@media (max-width: 480px) {
   .certificate-card {
-    flex-shrink: 0;
-    height: 500px;
-    width: 600px; /* Fixed width for certificates */
-    margin-right: 20px; /* Space between certificates */
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    width: 90vw;
+    height: 250px;
   }
-  
-  .certificate-card:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
+
+  .certificates-container h2 {
+    font-size: 1.7rem;
   }
-  
-  .certificate-image {
-    width: 100%;
-    height: 450px; /* Preserve image size */
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+
+  .certificates-instruction {
+    font-size: 0.85rem;
   }
-  
-  /* Keyframes for continuous scrolling right-to-left */
-  @keyframes scroll-right-to-left {
-    0% {
-      transform: translateX(0); /* Start at the beginning */
-    }
-    100% {
-      transform: translateX(-50%); /* Slide by half the width of the content */
-    }
-  }
-  
+}

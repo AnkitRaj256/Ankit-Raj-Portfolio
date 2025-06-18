@@ -1,26 +1,43 @@
-/* index.css */
+/* Theme variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #f96d00;
+}
+
+[data-theme='dark'] {
+  --bg-color: #0f0f0f;
+  --text-color: #ffffff;
+  --accent-color: #f96d00;
+}
+
+/* Apply theme globally */
 body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s ease, color 0.3s ease;
+  
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
-  overflow: hidden; /* Hides the default scrollbar */
+  overflow-y: scroll;        /* Keeps layout stable */
+  overflow-x: hidden;        /* Prevent horizontal scrollbar */
+  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 
-html {
-  overflow-y: scroll; /* Enables vertical scrolling without showing the scrollbar */
-  scrollbar-width: none; /* Hides scrollbar in Firefox */
-  -ms-overflow-style: none; /* Hides scrollbar in IE and Edge */
+/* Optional: theme toggle button styling */
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-html::-webkit-scrollbar {
-  display: none; /* Hides scrollbar in Chrome, Safari, and newer Edge */
-}
-
-a {
-  text-decoration: none;
-}
-
-:root {
-  --primary-color: #6a11cb;
-  --secondary-color: #2575fc;
+.theme-toggle:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
 }

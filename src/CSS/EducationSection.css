@@ -1,16 +1,18 @@
 /* General Styles */
 .education-section {
-    background-color: #f9f9f9;
     padding: 100px;
     text-align: center;
     position: relative;
+  }
+
+  h1.section-title{
+    color: var(--text-color);
   }
   
   .section-title {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 30px;
-    color: #000000;
   }
   
   /* Cards */
@@ -48,7 +50,7 @@
   }
   
   .card-back {
-    background: #f5e7e1;
+    background: var(--card-back);
     transform: rotateY(180deg);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
@@ -92,7 +94,7 @@
   }
   
   .modal-content {
-    background: white;
+    background: var(--modal-bg);
     padding: 20px;
     border-radius: 10px;
     max-width: 80%;

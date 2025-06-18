@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../CSS/Certificates.css";
 import C1 from "../Images/C1.png";
 import C2 from "../Images/C2.png";
@@ -79,20 +79,26 @@ const certificates = [
     image: C10,
     url: "https://example.com/certificate3",
   },
-
-  // Add more certificates as needed
 ];
 
 const Certificates = () => {
-    const totalWidth = certificates.length * 220; // 200px width + 20px margin
-    const duration = totalWidth / 100; // Adjust speed dynamically
-    const sliderStyle = {
-      "--scroll-duration": `${duration}s`, // Use CSS custom property
-    };
-  
-    return (
-      <div className="certificates-container">
+  const [showAll, setShowAll] = useState(false);
+  const totalWidth = certificates.length * 220;
+  const duration = totalWidth / 100;
+
+  const sliderStyle = {
+    "--scroll-duration": `${duration}s`,
+  };
+
+  return (
+    <div class="certificates-slider-wrapper">
+    <div className="certificates-container">
       <h2>Certificates</h2>
+      <p className="certificates-instruction">
+        <em>Click on any certificate to verify its authenticity.</em>
+      </p>
+
+      {!showAll && (
         <div className="certificates-slider" style={sliderStyle}>
           {certificates.concat(certificates).map((certificate, index) => (
             <div
@@ -108,8 +114,30 @@ const Certificates = () => {
             </div>
           ))}
         </div>
-      </div>
-    );
-  };
+      )}
+
+      <button className="show-all-btn" onClick={() => setShowAll(!showAll)}>
+        {showAll ? "Hide All" : "Show All"}
+      </button>
+
+      {showAll && (
+        <div className="certificates-grid">
+          {certificates.map((certificate) => (
+            <div
+              key={certificate.id}
+              className="grid-card"
+              onClick={() => window.open(certificate.url, "_blank")}
+            >
+              <img src={certificate.image} alt={certificate.title} />
+              <p>{certificate.title}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+    </div>
+
+  );
+};
 
 export default Certificates;

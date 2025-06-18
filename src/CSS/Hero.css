@@ -1,39 +1,124 @@
 .hero {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   min-height: 85vh;
-  padding: 0 2rem;
-  background: #393e46; /* Optional: Light background color */
+  padding: 2rem 5%;
+  z-index: 1;
+  position: relative;
+  flex-wrap: wrap;
 }
 
 .hero-content {
-  text-align: right;
-  flex: 1;
+  flex: 1 1 400px;
+  text-align: center;
+  z-index: 1;
 }
 
 .hero-content h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
-  color: white;
+  color: var(--text-color);
+  line-height: 1.2;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
-  color: #fdd2b1;
+  font-size: 1.25rem;
+  color: var(--accent-color);
+  max-width: 600px;
+  margin-left: 50px;
 }
 
 .hero-photo {
-  flex: 1;
+  flex: 1 1 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .hero-photo img {
-  width: 350px; /* Adjust size */
-  height: 350px; /* Adjust size */
-  border-radius: 50%; /* Makes the image circular */
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Adds shadow */
+  position: relative;
+  z-index: 1;
+  animation: pulse-glow 4s ease-in-out infinite;
+  border: 5px solid transparent;
+  background-image: linear-gradient(#000, #000),
+    linear-gradient(135deg, #ff5f6d, #ffc371, #4facfe, #43e97b);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+.typing-loop {
+  font-size: 1.2rem;
+  color: #fdd2b1;
+  margin-top: 0.5rem;
+  min-height: 1.5em; /* Keeps space reserved for animation */
+  white-space: nowrap;
+}
+
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fdd2b1;
+  }
+}
+
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .hero-content {
+    text-align: center;
+    margin-bottom: -100px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  .hero-photo {
+    margin-top: -100px;
+  }
+
+  .hero-photo img {
+    width: 220px;
+    height: 220px;
+  }
 }
