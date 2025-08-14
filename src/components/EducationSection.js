@@ -24,7 +24,7 @@ const educationDetails = [
   {
     title: "Undergraduate",
     institute: "VIT Bhopal University",
-    marks: "8.45/10 CGPA",
+    marks: "8.49/10 CGPA",
     year: "2022-Ongoing",
     marksheet: UndergraduatePDF,
   },
